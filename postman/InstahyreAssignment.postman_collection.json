@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "7053e92d-6a65-4317-aaaf-f46e702db7a1",
+		"name": "InstahyreAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25962006"
+	},
+	"item": [
+		{
+			"name": "SearchPhoneNumber",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250YWN0X251bWJlciI6IjgwNzQyNjI4MTQiLCJ1c2VyX2lkIjoiOGZiNDUwOTYtYWIzYS00YzRjLWI2ZDQtYmEzMDQwYzQ1NGQxIiwibmFtZSI6IkFzaHdhbmkiLCJpYXQiOjE2OTEzNDc0MjEsImV4cCI6MTY5MTM1NDYyMX0.X1p4xmI7mUfbYBu1Ynm6ymSug7jxdBNCfjkpYkg3C4g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/search/?query=1234567899",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "1234567899"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contact_number\":\"8074262814\",\n    \"password\":\"password\"\n}   \n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reportContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250YWN0X251bWJlciI6IjgwNzQyNjI4MTQiLCJ1c2VyX2lkIjoiOGZiNDUwOTYtYWIzYS00YzRjLWI2ZDQtYmEzMDQwYzQ1NGQxIiwibmFtZSI6IkFzaHdhbmkiLCJpYXQiOjE2OTEzNTQ3NDIsImV4cCI6MTY5MTM2MTk0Mn0.nhe_V4_PBLiSu5vUjKhXGMX4Uj5kul9sPu5Hb3kXx8A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isSpam\":false,\n    \"contact_number\":\"8074262814\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/search/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"search",
+						"report"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contact_number\":\"8074262814\",\n    \"name\":\"Ashwani\",\n    \"email\":\"sample2@gmail.com\",\n    \"password\":\"password\"\n}   \n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/signup/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpecificContact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250YWN0X251bWJlciI6IjgwNzQyNjI4MTQiLCJ1c2VyX2lkIjoiOGZiNDUwOTYtYWIzYS00YzRjLWI2ZDQtYmEzMDQwYzQ1NGQxIiwibmFtZSI6IkFzaHdhbmkiLCJpYXQiOjE2OTEzNDc0MjEsImV4cCI6MTY5MTM1NDYyMX0.X1p4xmI7mUfbYBu1Ynm6ymSug7jxdBNCfjkpYkg3C4g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"1234123455\",\n    \"name\":\"ram\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/search/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"search",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
