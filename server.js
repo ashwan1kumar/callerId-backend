@@ -1,6 +1,7 @@
 // index.js
 require('dotenv').config();
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const sequelize = require('./src/config/database');
 const usersRoutes = require('./src/routes/users');
@@ -10,7 +11,7 @@ const redis = require('./src/config/redis');
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
-
+app.use(morgan('combined'));
 // API routes
 app.use('/api/users', usersRoutes);
 app.use('/api/search',authCheck, searchRoutes);
